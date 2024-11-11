@@ -1,0 +1,134 @@
+a) Handle Divided by Zero Exception. 
+# Modules 
+from goto import * 
+import time 
+import var 
+import pio 
+import resource 
+import math 
+import cpu 
+import FileStore 
+import VFP 
+def peripheral_setup () : 
+# Peripheral Constructors 
+pio.cpu=cpu.CPU () 
+pio.storage=FileStore.FileStore () 
+pio.server=VFP.VfpServer () 
+pio.storage.begin () 
+pio.server.begin (0) 
+# Install interrupt handlers 
+def peripheral_loop () : 
+pass 
+#---CONFIG_END--- 
+# Main function 
+def main () : 
+# Setup  
+peripheral_setup() 
+numerator = 10 
+denominator = 0  # Change this to a non-zero value to see a successful division 
+# Attempt to perform the division 
+try: 
+result = numerator / denominator 
+print(f"The result of {numerator} / {denominator} is: {result}") 
+except ZeroDivisionError: 
+print("Error: Division by zero is undefined.") 
+# Infinite loop 
+while 1 : 
+peripheral_loop() 
+pass 
+# Command line execution 
+if __name__ == '__main__' : 
+main()
+
+
+
+
+b) Print current time for 10 times with an interval of10seconds. 
+from goto import * 
+import time 
+import var 
+import pio 
+import resource 
+# Peripheral Configuration Code (do not edit) 
+#---CONFIG_BEGIN--- 
+import cpu 
+import FileStore 
+import VFP 
+def peripheral_setup () : 
+# Peripheral Constructors 
+pio.cpu=cpu.CPU () 
+pio.storage=FileStore.FileStore () 
+pio.server=VFP.VfpServer () 
+pio.storage.begin () 
+pio.server.begin (0) 
+# Install interrupt handlers 
+def peripheral_loop () : 
+pass 
+#---CONFIG_END--- 
+# Main function 
+def main(): 
+# Setup 
+peripheral_setup()  
+# Print current time 10 times with an interval of 10 seconds 
+for i in range(10): 
+current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) 
+print(f"Iteration {i + 1}: Current time is {current_time}") 
+t
+ ime.sleep(10)  # Wait for 10 seconds 
+# Infinite loop 
+while 1: 
+peripheral_loop() 
+pass 
+# Command line execution 
+if _name_ == '_main_': 
+main() 
+
+
+
+c) Read a fileline byline and print the word count of each line 
+# Modules 
+from goto import * 
+import time 
+import var 
+import pio 
+import resource 
+import math 
+# Peripheral Configuration Code (do not edit) 
+#---CONFIG_BEGIN--- 
+import cpu 
+import FileStore 
+import VFP 
+def peripheral_setup () : 
+# Peripheral Constructors 
+pio.cpu=cpu.CPU () 
+pio.storage=FileStore.FileStore () 
+pio.server=VFP.VfpServer () 
+pio.storage.begin () 
+pio.server.begin (0) 
+# Install interrupt handlers 
+def peripheral_loop () : 
+pass 
+# Main function 
+def main () : 
+# Setup 
+peripheral_setup() 
+f
+ ilename = r'C:\Users\hp\OneDrive\Desktop\arduino pract\Example.txt'  
+try: 
+with open(filename, 'r') as file: 
+for line_number, line in enumerate(file, start=1): 
+# Count the number of words in the line 
+word_count = len(line.split()) 
+print(f"Line {line_number}: {word_count} words") 
+except FileNotFoundError: 
+print(f"Error: The file '{filename}' does not exist.") 
+# Infinite loop 
+while 1 : 
+peripheral_loop() 
+pass 
+# Command line execution 
+if __name__ == '__main__' : 
+main() 
+Example.txt 
+Welcome to our college.  
+Our college is providing different courses. 

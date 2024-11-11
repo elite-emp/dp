@@ -1,0 +1,167 @@
+a) Read your name and print Hello message with name 
+from goto import * 
+import time 
+import var 
+import pio 
+import resource 
+import cpu 
+import FileStore 
+import VFP 
+def peripheral_setup () : 
+# Peripheral Constructors 
+pio.cpu=cpu.CPU () 
+pio.storage=FileStore.FileStore () 
+pio.server=VFP.VfpServer () 
+pio.storage.begin () 
+pio.server.begin (0) 
+# Install interrupt handlers 
+def peripheral_loop () : 
+pass 
+def main () : 
+# Setup 
+peripheral_setup() 
+name="Raksha Ghevadekar" 
+print("Hello "+name) 
+# Infinite loop 
+while 1 : 
+peripheral_loop() 
+pass 
+# Command line execution 
+if __name__ == '__main__' : 
+main()
+
+
+
+
+b)Read two numbers and print their sum, difference, product and division. 
+# Modules 
+from goto import * 
+import time 
+import var 
+import pio 
+import resource 
+import cpu 
+import FileStore 
+import VFP 
+def peripheral_setup () : 
+# Peripheral Constructors 
+pio.cpu=cpu.CPU () 
+pio.storage=FileStore.FileStore () 
+pio.server=VFP.VfpServer () 
+pio.storage.begin () 
+pio.server.begin (0) 
+# Install interrupt handlers 
+def peripheral_loop () : 
+pass 
+#---CONFIG_END--- 
+# Main function 
+def main () : 
+# Setup 
+peripheral_setup() 
+num1 = 20 
+num2 = 10 
+# Calculate sum, difference, product, and division 
+sum_result = num1 + num2 
+difference_result = num1 - num2 
+product_result = num1 * num2 
+# Print the results 
+print(f"Sum: {sum_result}") 
+print(f"Difference: {difference_result}") 
+print(f"Product: {product_result}") 
+print(f"Division: {division_result}") 
+# Infinite loop 
+while 1 : 
+peripheral_loop() 
+pass 
+# Command line execution 
+if __name__ == '__main__' : 
+main()
+
+
+
+c) Word and character count of a given string. 
+from goto import * 
+import time 
+import var 
+import pio 
+import resource 
+import cpu 
+import FileStore 
+import VFP 
+def peripheral_setup () : 
+# Peripheral Constructors 
+pio.cpu=cpu.CPU () 
+pio.storage=FileStore.FileStore () 
+pio.server=VFP.VfpServer () 
+pio.storage.begin () 
+pio.server.begin (0) 
+# Install interrupt handlers 
+def peripheral_loop () : 
+pass 
+#---CONFIG_END--- 
+# Main function 
+def main () : 
+# Setup 
+peripheral_setup() 
+str="Hello World" 
+character_count = len(str) 
+word_count = len(str.split()) 
+print("Character count: ",character_count) 
+print("word count: ",word_count) 
+# Infinite loop 
+while 1 : 
+peripheral_loop() 
+pass 
+# Command line execution 
+if __name__ == '__main__' : 
+main()
+
+
+
+
+d)Area of a given shape (rectangle, triangle and circle) reading shape and appropriate 
+values from standard input. 
+from goto import * 
+import time 
+import var 
+import pio 
+import resource 
+import math 
+import cpu 
+import FileStore 
+import VFP 
+def peripheral_setup () : 
+# Peripheral Constructors 
+pio.cpu=cpu.CPU () 
+pio.storage=FileStore.FileStore () 
+pio.server=VFP.VfpServer () 
+pio.storage.begin () 
+pio.server.begin (0) 
+def peripheral_loop () : 
+pass 
+def main () : 
+peripheral_setup() 
+def calculate_rectangle_area(width, height): 
+return width * height 
+def calculate_triangle_area(base, height): 
+return 0.5 * base * height 
+def calculate_circle_area(radius): 
+return math.pi * radius ** 2 
+rectangle_width = 5  
+rectangle_height = 10 
+triangle_base = 6 
+triangle_height = 4 
+circle_radius = 3 
+# Calculate areas 
+rectangle_area = calculate_rectangle_area(rectangle_width, rectangle_height) 
+triangle_area = calculate_triangle_area(triangle_base, triangle_height) 
+circle_area = calculate_circle_area(circle_radius) 
+# Print the results 
+print(f"The area of the rectangle is: {rectangle_area}") 
+print(f"The area of the triangle is: {triangle_area}") 
+print(f"The area of the circle is: {circle_area:.2f}") 
+while 1 : 
+peripheral_loop() 
+pass 
+# Command line execution 
+if __name__ == '__main__' : 
